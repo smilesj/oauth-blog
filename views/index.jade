@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Hello to #{title}
+  script.
+    split_1 = window.location.search.split('=');
+    split_2 = split_1[1].split('&');
+
+  form(id="target", method="get", action="/writeBlog")
+   p insert title
+   textarea(name="title")
+   p insert content
+   textarea(name="content")
+   p insert tag
+   textarea(name="tag")
+   input(type="submit", value="Post!")
